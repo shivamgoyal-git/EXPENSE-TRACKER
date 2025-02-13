@@ -1,0 +1,171 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a12 0%, #0d1a2d 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    color: #e0e0e0;
+}
+
+.container {
+    background: rgba(25, 29, 35, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.5s ease;
+    border: 1px solid #2d3748;
+}
+
+.container:hover {
+    transform: translateY(-5px);    
+}
+
+h1 {
+    color: #e2e8f0;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(55deg, #63b3ed, #306da0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #2d3748;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #1a202c;
+    color: #e2e8f0;
+}
+
+input::placeholder {
+    color: #718096;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 15px rgba(66, 153, 225, 0.3);
+}
+
+button#add-expense-btn {
+    background: linear-gradient(45deg, #4299e1, #3182ce);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+button#add-expense-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
+}
+
+#expense-container {
+    background: #1a202c;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #2d3748;
+}
+
+#expense-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#expense-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: #2d3748;
+    border-radius: 8px;
+    color: #e2e8f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease;
+    border: 1px solid #3c4552;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#expense-list li:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+#total-expenses {
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #63b3ed;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #2d3748;
+}
+
+#expense-list li button {
+    background: #fc8181;
+    color: #1a202c;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+#expense-list li button:hover {
+    background: #f56565;
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .input-container {
+        flex-direction: column; 
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
